@@ -1,0 +1,48 @@
+.carousel-control-next,
+.carousel-control-prev {
+    color: black;
+}
+
+.carousel-item__header {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 55px;
+    line-height: 67px;
+}
+
+.carousel-item__paragraph {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+}
+
+@media (max-width: 992px) {
+    .sideImg {
+        display: none;
+    }
+
+    .carousel-item__header {
+        white-space: nowrap;
+    }
+
+}
+
+@media (max-width: 576px) and (max-width: 768px) {
+    .sideImg {
+        display: none;
+    }
+
+    .carousel-item__header {
+        font-size: 40px;
+        padding-left: .5em;
+        white-space: normal;
+    }
+
+    .carousel-item__paragraph {
+        font-size: 30px;
+        padding-left: .5em;
+    }
+}

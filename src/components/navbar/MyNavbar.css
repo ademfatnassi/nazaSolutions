@@ -1,0 +1,18 @@
+.nav-scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link__item {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.naza-logo_site {
+  content: url("../../assets/images/nazadev_logo.png");
+  width: 75px;
+  transition: ease 0.5s;
+}
