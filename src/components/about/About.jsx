@@ -5,7 +5,7 @@ import aboutImg from "../../assets/images/nazadevsolutions_logo.png";
 export class About extends Component {
   render() {
     return (
-      <>
+      <section id="about">
         <Container>
           <h2 className="page-section-heading text-center text-uppercase mb-0">
             Qui sommes nous?
@@ -23,7 +23,7 @@ export class About extends Component {
             </Col>
           </Row>
         </Container>
-      </>
+      </section>
     );
   }
 }

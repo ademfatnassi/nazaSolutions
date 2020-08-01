@@ -2,8 +2,9 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: 900;
-    font-size: 96px;
+    font-size: 64px;
     line-height: 117px;
+    word-break: keep-all;
     /* identical to box height */
 
 

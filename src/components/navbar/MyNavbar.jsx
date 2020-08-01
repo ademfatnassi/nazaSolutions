@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-scroll";
 import logo from "../../assets/images/nazadevsolutions_logo.png";
 import "./MyNavbar.css";
 
@@ -15,14 +16,22 @@ export class MyNavbar extends Component {
           variant="light"
           className="fixed-top navbar"
         >
-          <Navbar.Brand href="#home" style={{ zIndex: "1" }}>
+          <Link
+            style={{ zIndex: "1" }}
+            activeClass="active"
+            spy={true}
+            to="top"
+            smooth={true}
+            duration={1000}
+            offset={-100}
+          >
             <img
               alt="NAZA Dev Solutions logo"
               src={logo}
               width="150"
               id="logo_img"
             />
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
             style={{ zIndex: "1" }}
@@ -33,26 +42,59 @@ export class MyNavbar extends Component {
             style={{ zIndex: "1", justifyContent: "flex-end" }}
           >
             <Nav className="flex-wrap ">
-              <Nav.Link className="nav-link__item" href="#acceuil">
+              {/* <Nav.Link className="nav-link__item" href="" spy={true} to="top" smooth={true} duration={1000} offset={-100}> */}
+              <Link
+                className="nav-link__item nav-link pointer"
+                activeClass="active"
+                spy={true}
+                to="top"
+                smooth={true}
+                duration={1000}
+                offset={-100}
+              >
                 Acceuil
-              </Nav.Link>
-              <Nav.Link
-                className="nav-link__item"
-                eventKey={2}
-                href="#presentation"
+              </Link>
+
+              {/* </Nav.Link> */}
+              {/* <Nav.Link className="nav-link__item" eventKey={2} href=""> */}
+              <Link
+                className="nav-link__item nav-link pointer"
+                activeClass="active"
+                spy={true}
+                to="about"
+                smooth={true}
+                duration={1000}
+                offset={-100}
               >
                 Présentation
-              </Nav.Link>
-              <Nav.Link
-                className="nav-link__item"
-                eventKey={3}
-                href="#services"
+              </Link>
+              {/* </Nav.Link> */}
+              {/* <Nav.Link className="nav-link__item" eventKey={3} href=""> */}
+              <Link
+                className="nav-link__item nav-link pointer"
+                activeClass="active"
+                spy={true}
+                to="services"
+                smooth={true}
+                duration={1000}
+                offset={-50}
               >
                 Services
-              </Nav.Link>
-              <Nav.Link className="nav-link__item" eventKey={4} href="#contact">
+              </Link>
+              {/* </Nav.Link> */}
+              {/* <Nav.Link className="nav-link__item" eventKey={4} href=""> */}
+              <Link
+                className="nav-link__item nav-link pointer"
+                activeClass="active"
+                spy={true}
+                to="contact"
+                smooth={true}
+                duration={1000}
+                offset={-90}
+              >
                 Contact
-              </Nav.Link>
+              </Link>
+              {/* </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Navbar>

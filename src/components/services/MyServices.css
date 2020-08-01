@@ -1,0 +1,12 @@
+#services {
+    margin-bottom: 10em;
+}
+
+.services_item--title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+}

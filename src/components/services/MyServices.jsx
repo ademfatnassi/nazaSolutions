@@ -3,20 +3,21 @@ import Development from "../../assets/images/Development.svg";
 import UX from "../../assets/images/User_Experience.svg";
 import SEO from "../../assets/images/SEO.svg";
 import Feedback from "../../assets/images/Feedback_Audience.svg";
+import "./MyServices.css";
 
 export class MyServices extends Component {
   render() {
     return (
       <>
-        <section className="features-icons text-center">
+        <section className="" id="services">
           <div className="container p-5">
             <h2 className="page-section-heading text-center text-uppercase mb-5">
               NOS SERVICES
             </h2>
             <div className="row">
               <div className="col-lg-3">
-                <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                  <div className="features-icons-icon d-flex">
+                <div className="item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                  <div className="icon d-flex">
                     <img
                       width="120px"
                       src={Development}
@@ -24,7 +25,9 @@ export class MyServices extends Component {
                       className="m-auto"
                     />
                   </div>
-                  <h3>Applications / Sites web</h3>
+                  <h3 className="services_item--title">
+                    Applications / Sites web
+                  </h3>
                   <p className="lead mt-0">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit
                     euismod sed id scelerisque. Nullam ultrices massa, sit arcu
@@ -33,11 +36,11 @@ export class MyServices extends Component {
                 </div>
               </div>
               <div className="col-lg-3">
-                <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                  <div className="features-icons-icon d-flex">
+                <div className="item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                  <div className="icon d-flex">
                     <img width="120px" src={UX} alt="" className="m-auto" />
                   </div>
-                  <h3>Applications mobile</h3>
+                  <h3 className="services_item--title">Applications mobile</h3>
                   <p className="lead mb-0">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit
                     euismod sed id scelerisque. Nullam ultrices massa, sit arcu
@@ -46,11 +49,11 @@ export class MyServices extends Component {
                 </div>
               </div>
               <div className="col-lg-3">
-                <div className="features-icons-item mx-auto mb-0 mb-lg-3">
-                  <div className="features-icons-icon d-flex">
+                <div className="item mx-auto mb-0 mb-lg-3">
+                  <div className="icon d-flex">
                     <img width="120px" src={SEO} alt="" className="m-auto" />
                   </div>
-                  <h3>Référencement</h3>
+                  <h3 className="services_item--title">Référencement</h3>
                   <p className="lead mb-0">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit
                     euismod sed id scelerisque. Nullam ultrices massa, sit arcu
@@ -59,8 +62,8 @@ export class MyServices extends Component {
                 </div>
               </div>
               <div className="col-lg-3">
-                <div className="features-icons-item mx-auto mb-0 mb-lg-3">
-                  <div className="features-icons-icon d-flex">
+                <div className="item mx-auto mb-0 mb-lg-3">
+                  <div className="icon d-flex">
                     <img
                       width="120px"
                       src={Feedback}
@@ -68,7 +71,7 @@ export class MyServices extends Component {
                       className="m-auto"
                     />
                   </div>
-                  <h3>Réseaux sociaux</h3>
+                  <h3 className="services_item--title">Réseaux sociaux</h3>
                   <p className="lead mb-0">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit
                     euismod sed id scelerisque. Nullam ultrices massa, sit arcu

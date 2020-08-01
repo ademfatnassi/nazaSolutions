@@ -10,11 +10,10 @@ import Contact from './components/contact/Contact';
 function App() {
   return (
     <>
-
       <MyNavbar />
-      <div className="circle_cornor"
-      ></div>
+      <div className="circle_cornor" ></div>
       <MyCarousel />
+
       <About />
       <MyServices />
       <Contact />
