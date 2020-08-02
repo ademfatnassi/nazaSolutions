@@ -10,7 +10,7 @@ export class About extends Component {
           <h2 className="page-section-heading text-center text-uppercase mb-0">
             Qui sommes nous?
           </h2>
-          <Row className="mt-2 p-5">
+          <Row className="mt-2 py-5">
             <Col>
               <p className="about-section-item__paragraph">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Luctus

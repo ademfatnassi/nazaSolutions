@@ -90,7 +90,7 @@ export class MyNavbar extends Component {
                 to="contact"
                 smooth={true}
                 duration={1000}
-                offset={-90}
+                offset={-120}
               >
                 Contact
               </Link>

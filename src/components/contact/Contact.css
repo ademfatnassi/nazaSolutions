@@ -17,6 +17,114 @@
     color: #FFFFFF;
 }
 
-#contact {
+/* #contact {
     margin-top: 10em;
+} */
+.contactForm {
+    margin-top: -5em;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)
+}
+
+.contactForm form h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+}
+
+.form-label {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 44px;
+}
+
+@media (max-width: 768px) and (max-width: 576px) {
+
+    .contactForm {
+        margin-top: 0em;
+        box-shadow: none;
+    }
+
+    .copyright {
+        font-size: small;
+        white-space: nowrap;
+    }
+
+    .contact_header {
+        font-size: 30px;
+    }
+
+    .contactForm form h3 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 44px;
+    }
+
+    .form-label {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 44px;
+    }
+}
+
+.map-container-3 {
+    overflow: hidden;
+    padding-bottom: 30%;
+    position: relative;
+    height: 0;
+}
+
+.map-container-3 iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.newsletter {
+    padding: 80px 0;
+    font-family: Montserrat;
+    font-style: normal;
+    /* background: #f2f2f2; */
+}
+
+.newsletter .content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.newsletter .content h2 {
+    color: #282b30;
+    margin-bottom: 40px;
+}
+
+.newsletter .content .form-control {
+    height: 50px;
+    border-color: #ffffff;
+    border: 1px solid #000;
+    border-radius: 0;
+}
+
+.newsletter .content.form-control:focus {
+    box-shadow: none;
+    border: 2px solid #282b30;
+}
+
+.newsletter .content .btn {
+    min-height: 50px;
+    border-radius: 0;
+    background: #282b30;
+    color: #fff;
+    font-weight: 600;
 }

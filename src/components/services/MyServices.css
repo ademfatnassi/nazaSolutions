@@ -1,5 +1,5 @@
 #services {
-    margin-bottom: 10em;
+    margin-top: 7em;
 }
 
 .services_item--title {
@@ -9,4 +9,6 @@
     font-size: 18px;
     line-height: 24px;
     text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }

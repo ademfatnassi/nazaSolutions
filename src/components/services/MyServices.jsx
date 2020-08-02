@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Development from "../../assets/images/Development.svg";
-import UX from "../../assets/images/User_Experience.svg";
-import SEO from "../../assets/images/SEO.svg";
-import Feedback from "../../assets/images/Feedback_Audience.svg";
+import Development from "../../assets/images/Development1.png";
+import UX from "../../assets/images/User_Experience1.png";
+import SEO from "../../assets/images/SEO1.png";
+import Feedback from "../../assets/images/Feedback_Audients.png";
 import "./MyServices.css";
 
 export class MyServices extends Component {
@@ -10,7 +10,7 @@ export class MyServices extends Component {
     return (
       <>
         <section className="" id="services">
-          <div className="container p-5">
+          <div className="container py-5">
             <h2 className="page-section-heading text-center text-uppercase mb-5">
               NOS SERVICES
             </h2>
