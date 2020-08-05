@@ -13,13 +13,13 @@ export class MyNavbar extends Component {
           collapseOnSelect
           expand="lg"
           // bg="white"
-          variant="light"
+          // variant="light"
           className="fixed-top navbar"
         >
           <Link
             style={{ zIndex: "1" }}
-            activeClass="active"
-            spy={true}
+            // activeClass="active"
+            // spy={true}
             to="top"
             smooth={true}
             duration={1000}
@@ -45,8 +45,8 @@ export class MyNavbar extends Component {
               {/* <Nav.Link className="nav-link__item" href="" spy={true} to="top" smooth={true} duration={1000} offset={-100}> */}
               <Link
                 className="nav-link__item nav-link pointer"
-                activeClass="active"
-                spy={true}
+                // activeClass="active"
+                // spy={true}
                 to="top"
                 smooth={true}
                 duration={1000}
@@ -59,8 +59,8 @@ export class MyNavbar extends Component {
               {/* <Nav.Link className="nav-link__item" eventKey={2} href=""> */}
               <Link
                 className="nav-link__item nav-link pointer"
-                activeClass="active"
-                spy={true}
+                // activeClass="active"
+                // spy={true}
                 to="about"
                 smooth={true}
                 duration={1000}
@@ -72,8 +72,8 @@ export class MyNavbar extends Component {
               {/* <Nav.Link className="nav-link__item" eventKey={3} href=""> */}
               <Link
                 className="nav-link__item nav-link pointer"
-                activeClass="active"
-                spy={true}
+                // activeClass="active"
+                // spy={true}
                 to="services"
                 smooth={true}
                 duration={1000}
@@ -85,8 +85,8 @@ export class MyNavbar extends Component {
               {/* <Nav.Link className="nav-link__item" eventKey={4} href=""> */}
               <Link
                 className="nav-link__item nav-link pointer"
-                activeClass="active"
-                spy={true}
+                // activeClass="active"
+                // spy={true}
                 to="contact"
                 smooth={true}
                 duration={1000}
@@ -108,6 +108,8 @@ function myFunction() {
   const nav = document.querySelector(".navbar");
   const logo_img = document.querySelector("#logo_img");
   const navTriger = document.querySelector(".navbar-trigger");
+  const navLinks = document.querySelectorAll(".nav-link__item");
+  var elem = document.querySelector(".nav-link__item");
 
   const navTrigerOptions = {
     rootMargin: "-50px 0px 0px",
@@ -119,9 +121,23 @@ function myFunction() {
         nav.classList.add("nav-scrolled");
         logo_img.classList.add("naza-logo_site");
         logo_img.style.transition = "ease-out .5s";
+        elem.style.color = "purple !important";
+
+        navLinks.forEach((item) => {
+          item.classList.add("trigger-nav-links");
+
+          return item;
+        });
+        console.info(navLinks[0]);
       } else {
         nav.classList.remove("nav-scrolled");
         logo_img.classList.remove("naza-logo_site");
+        navLinks.forEach((item) => {
+          item.classList.remove("trigger-nav-links");
+
+          return item;
+        });
+        console.info(navLinks);
       }
     });
   }, navTrigerOptions);

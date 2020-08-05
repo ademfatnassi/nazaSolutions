@@ -11,7 +11,14 @@
   line-height: 29px;
 }
 
-.pointer {cursor: pointer;}
+.trigger-nav-links {
+  color: #5DBFDF !important;
+
+}
+
+.pointer {
+  cursor: pointer;
+}
 
 .naza-logo_site {
   content: url("../../assets/images/nazadev_logo.png");

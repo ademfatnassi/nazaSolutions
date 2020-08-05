@@ -18,8 +18,11 @@ export class About extends Component {
                 amet cras facilisis arcu, mollis aliquam laoreet molestie.
               </p>
             </Col>
-            <Col className="sideImg">
-              <img alt="" src={aboutImg} width="500px" />
+            <Col
+              className="sideImg"
+              style={{ display: "grid", placeItems: "center" }}
+            >
+              <img alt="" src={aboutImg} width="450px" />
             </Col>
           </Row>
         </Container>

@@ -128,3 +128,8 @@
     color: #fff;
     font-weight: 600;
 }
+
+.slick-slide {
+    display: grid !important;
+    place-items: center;
+}

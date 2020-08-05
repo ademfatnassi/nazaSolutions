@@ -1,40 +1,79 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { Mailbox, Telephone } from "react-bootstrap-icons";
+import Slider from "react-slick";
+import { Telephone } from "react-bootstrap-icons";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
+import { MdMessage } from "react-icons/md";
+import coca_cola from "../../assets/images/coca-cola.svg";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./Contact.css";
 
 export class Contact extends Component {
   render() {
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      className: "center",
+      centerMode: true,
+      centerPadding: "0px",
+      initialSlide: 0,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 2,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 2,
+          },
+        },
+      ],
+    };
     return (
       <>
-        <section className="newsletter">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-12">
-                <div className="content">
-                  <form>
-                    <h2>ABONNEZ-VOUS À NOTRE NEWSLETTER</h2>
-                    <div className="input-group">
-                      <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Enter your email"
-                      />
-                      <span className="input-group-btn">
-                        <button className="btn" type="submit">
-                          Abonnez-vous maintenant
-                        </button>
-                      </span>
-                    </div>
-                  </form>
-                </div>
-              </div>
+        <Container>
+          <h3 className="page-section-heading text-center">Nos Partenaires</h3>
+          <Slider {...settings}>
+            <div className="slide">
+              <img src={coca_cola} alt="logo" />
             </div>
-          </div>
-        </section>
+            <div className="slide">
+              <img src={coca_cola} alt="logo" />
+            </div>
+            <div className="slide">
+              <img src={coca_cola} alt="logo" />
+            </div>
+            <div className="slide">
+              <img src={coca_cola} alt="logo" />
+            </div>
+            <div className="slide">
+              <img src={coca_cola} alt="logo" />
+            </div>
+          </Slider>
+        </Container>
         {/* <!--Google map--> */}
-
         <div
           id="map-container-google-3"
           className="z-depth-1-half map-container-3"
@@ -56,7 +95,7 @@ export class Contact extends Component {
                     ABONNEZ-VOUS À NOTRE NEWSLETTER.
                   </h2>
                   <h4 className="contact_link">
-                    <Mailbox color="#5DBFDF" size={32} className="mr-2" />
+                    <FiMail color="#5DBFDF" size={32} className="mr-2" />
                     contact@NAZADev.com
                   </h4>
                   <h4 className="contact_link">
@@ -73,13 +112,13 @@ export class Contact extends Component {
                     <h3>NAZA Dev Solutions contact form</h3>
                     <Form.Group controlId="formGroupNom">
                       <Form.Label>Votre nom: </Form.Label>
-                      <Form.Control type="text" placeholder="votre nom..." />
+                      <Form.Control type="text" placeholder="Votre nom..." />
                     </Form.Group>
                     <Form.Group controlId="formGroupEmail">
                       <Form.Label>Votre adresse mail: </Form.Label>
                       <Form.Control
                         type="email"
-                        placeholder="votre adresse électronique..."
+                        placeholder="Votre adresse électronique..."
                       />
                     </Form.Group>
                     <Form.Group controlId="formGroupMsg">
@@ -87,11 +126,12 @@ export class Contact extends Component {
                       <Form.Control
                         as="textarea"
                         rows="3"
-                        placeholder="votre message..."
+                        placeholder="Votre message..."
                       />
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                      Envoyer votre message
+                      <MdMessage size="16" />
+                      &nbsp;Envoyer votre message
                     </Button>
                   </Form>
                 </Col>
