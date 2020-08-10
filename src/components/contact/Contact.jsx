@@ -2,21 +2,42 @@ import React, { Component } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 // import Slider from "react-slick";
 // import { Telephone } from "react-bootstrap-icons";
+
+import { sendMail } from "../../services";
+import { ToastContainer, toast } from "react-toastify";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay } from "swiper";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+import "swiper/swiper-bundle.css";
+import "react-toastify/dist/ReactToastify.css";
+import "./Contact.css";
+
 import { FaFacebookF, FaLinkedinIn, FaPhoneSquareAlt } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { MdMessage } from "react-icons/md";
 import coca_cola from "../../assets/images/coca-cola.svg";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-import "./Contact.css";
-import { sendMail } from "../../services";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from "swiper";
-import "swiper/swiper-bundle.css";
 
 SwiperCore.use([Autoplay]);
+const emailRegex = RegExp(
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+);
 
+const formValid = ({ formErrors, ...rest }) => {
+  let valid = true;
+
+  // validate form errors being empty
+  Object.values(formErrors).forEach((val) => {
+    val.length > 0 && (valid = false);
+  });
+
+  // validate the form was filled out
+  Object.values(rest).forEach((val) => {
+    val === "" && (valid = false);
+  });
+
+  return valid;
+};
 export class Contact extends Component {
   constructor() {
     super();
@@ -25,6 +46,11 @@ export class Contact extends Component {
       name: "",
       email: "",
       message: "",
+      formErrors: {
+        name: "",
+        email: "",
+        message: "",
+      },
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,7 +58,29 @@ export class Contact extends Component {
   }
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    // this.setState({ [e.target.name]: e.target.value });
+    e.preventDefault();
+    const { name, value } = e.target;
+    let formErrors = { ...this.state.formErrors };
+
+    switch (name) {
+      case "name":
+        formErrors.name = value.length < 3 ? "Minimum 3 caractères requis" : "";
+        break;
+      case "email":
+        formErrors.email = emailRegex.test(value)
+          ? ""
+          : "Adresse e-mail invalide";
+        break;
+      case "message":
+        formErrors.message =
+          value.length < 6 ? "Minimum 6 caractères requis" : "";
+        break;
+      default:
+        break;
+    }
+
+    this.setState({ formErrors, [name]: value });
   };
 
   async handleSubmit(e) {
@@ -40,15 +88,52 @@ export class Contact extends Component {
     const { name, email, message } = this.state;
 
     try {
-      let msg = await sendMail({ name, email, message });
-      console.info(msg.message);
-      this.setState({ name: "", email: "", message: "" });
+      if (formValid(this.state)) {
+        await sendMail({ name, email, message });
+
+        toast.info("Votre mail est envoyé avec succés", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        this.setState({ name: "", email: "", message: "" });
+
+        // console.log(name, email, message);
+      } else {
+        toast.warn(
+          "merci de vérifier que tous les champs sont bien renseignés",
+          {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
+        );
+      }
+      // console.info(msg.message);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      toast.error(error, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   }
 
   render() {
+    const { formErrors } = this.state;
     // const settings = {
     //   dots: false,
     //   infinite: true,
@@ -115,8 +200,6 @@ export class Contact extends Component {
             slidesPerView={3}
             grabCursor={true}
             autoplay={{ delay: 4500, disableOnInteraction: false }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
           >
             <SwiperSlide className="custom-swiper-slide">
               <img src={coca_cola} alt="logo" />
@@ -182,6 +265,9 @@ export class Contact extends Component {
                         value={this.state.name}
                         onChange={this.handleChange}
                       />
+                      {formErrors.name.length > 0 && (
+                        <span className="errorMessage">{formErrors.name}</span>
+                      )}
                     </Form.Group>
                     <Form.Group controlId="formGroupEmail">
                       <Form.Label>Votre adresse mail: </Form.Label>
@@ -192,6 +278,9 @@ export class Contact extends Component {
                         value={this.state.email}
                         onChange={this.handleChange}
                       />
+                      {formErrors.email.length > 0 && (
+                        <span className="errorMessage">{formErrors.email}</span>
+                      )}
                     </Form.Group>
                     <Form.Group controlId="formGroupMsg">
                       <Form.Label>Votre message: </Form.Label>
@@ -203,9 +292,14 @@ export class Contact extends Component {
                         value={this.state.message}
                         onChange={this.handleChange}
                       />
+                      {formErrors.message.length > 0 && (
+                        <span className="errorMessage">
+                          {formErrors.message}
+                        </span>
+                      )}
                     </Form.Group>
                     <Button
-                      disabled={true}
+                      // disabled={!formValid(this.state)}
                       className="right-0"
                       style={{
                         backgroundColor: "#5DBFDF",
@@ -216,6 +310,7 @@ export class Contact extends Component {
                       <MdMessage size="16" />
                       &nbsp;Envoyer votre message
                     </Button>
+                    <ToastContainer />
                   </Form>
                 </Col>
               </Row>

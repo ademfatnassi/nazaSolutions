@@ -147,6 +147,10 @@
     place-items: center;
 }
 
-.swiper-slide:hover {
+.custom-swiper-slide:hover {
     transform: scale(1.1);
+}
+
+.errorMessage {
+    color: red;
 }

@@ -128,7 +128,7 @@ function myFunction() {
 
           return item;
         });
-        console.info(navLinks[0]);
+        // console.info(navLinks[0]);
       } else {
         nav.classList.remove("nav-scrolled");
         logo_img.classList.remove("naza-logo_site");
@@ -137,7 +137,7 @@ function myFunction() {
 
           return item;
         });
-        console.info(navLinks);
+        // console.info(navLinks);
       }
     });
   }, navTrigerOptions);
