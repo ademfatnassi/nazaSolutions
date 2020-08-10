@@ -19,6 +19,15 @@
     line-height: 44px;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+    top: 40%;
+}
+
+.swiper-pagination-bullets {
+    bottom: 15% !important;
+}
+
 @media (max-width: 992px) {
     .sideImg {
         display: none;

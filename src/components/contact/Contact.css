@@ -74,6 +74,14 @@
     }
 }
 
+@media (max-width: 992px) {
+
+    .contactForm {
+        margin-top: 0em;
+        box-shadow: none;
+    }
+}
+
 .map-container-3 {
     overflow: hidden;
     padding-bottom: 30%;
@@ -132,4 +140,13 @@
 .slick-slide {
     display: grid !important;
     place-items: center;
+}
+
+.custom-swiper-slide {
+    display: grid;
+    place-items: center;
+}
+
+.swiper-slide:hover {
+    transform: scale(1.1);
 }

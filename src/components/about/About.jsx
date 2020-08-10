@@ -11,7 +11,7 @@ export class About extends Component {
             Qui sommes nous?
           </h2>
           <Row className="mt-2 py-5">
-            <Col>
+            <Col lg>
               <p className="about-section-item__paragraph">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Luctus
                 mauris dolor risus lacinia nisl eget ornare posuere. Adipiscing
@@ -19,6 +19,7 @@ export class About extends Component {
               </p>
             </Col>
             <Col
+              lg
               className="sideImg"
               style={{ display: "grid", placeItems: "center" }}
             >

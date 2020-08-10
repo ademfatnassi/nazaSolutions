@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@brainhubeu/react-carousel": "^1.19.26",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "react": "^16.13.1",
@@ -19,7 +19,8 @@
     "react-scroll": "^1.8.0",
     "react-slick": "^0.27.3",
     "serve": "^11.3.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^6.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

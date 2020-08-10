@@ -1,3 +1,7 @@
+:root {
+  --swiper-theme-color: rgb(93, 191, 223);
+}
+
 body {
   scroll-behavior: smooth;
   scroll-snap-type: y;
