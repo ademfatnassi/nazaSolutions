@@ -9127,10 +9127,10 @@ react-scroll@^1.8.0:
     lodash.throttle "^4.1.1"
     prop-types "^15.7.2"
 
-react-slick@^0.27.3:
-  version "0.27.3"
-  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.27.3.tgz#46387cb2d82f55a6cb06b9686c88871e94122e59"
-  integrity sha512-2cBLUpcdBL0pX7WIv+laWHG+Qnt4XaPsqHpkuPS5Upu+PbaS1hM6XsvPgw1A6s6iz3keLcHN//dsqbRGDrrcnQ==
+react-slick@^0.27.12:
+  version "0.27.12"
+  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.27.12.tgz#9970d9f040e3ee57ad6e0ab98e4e04bb9dd823ab"
+  integrity sha512-MGhkKK2YACB5+65/AjW+V9e/M+labh6zCJzSSGi34YiMg5n9LBzTUV8Qz6N0PbsKZQpeRwEwWkyIwqm8987B1w==
   dependencies:
     classnames "^2.2.5"
     enquire.js "^2.1.6"
