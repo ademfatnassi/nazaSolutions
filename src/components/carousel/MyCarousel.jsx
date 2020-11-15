@@ -118,7 +118,7 @@ export class MyCarousel extends Component {
               un positionnement optimal et la garantie du meilleur
               retour sur investissement...`,
                 img: appSEO,
-                imgWidth: "700px",
+                imgWidth: "600px",
               },
               {
                 header: "Réseaux sociaux",

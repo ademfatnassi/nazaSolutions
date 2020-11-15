@@ -45,8 +45,8 @@ export class MyNavbar extends Component {
               {/* <Nav.Link className="nav-link__item" href="" spy={true} to="top" smooth={true} duration={1000} offset={-100}> */}
               <Link
                 className="nav-link__item nav-link pointer"
-                // activeClass="active"
-                // spy={true}
+                activeClass="active"
+                spy={true}
                 to="top"
                 smooth={true}
                 duration={1000}
@@ -59,8 +59,8 @@ export class MyNavbar extends Component {
               {/* <Nav.Link className="nav-link__item" eventKey={2} href=""> */}
               <Link
                 className="nav-link__item nav-link pointer"
-                // activeClass="active"
-                // spy={true}
+                activeClass="active"
+                spy={true}
                 to="about"
                 smooth={true}
                 duration={1000}
@@ -72,8 +72,8 @@ export class MyNavbar extends Component {
               {/* <Nav.Link className="nav-link__item" eventKey={3} href=""> */}
               <Link
                 className="nav-link__item nav-link pointer"
-                // activeClass="active"
-                // spy={true}
+                activeClass="active"
+                spy={true}
                 to="services"
                 smooth={true}
                 duration={1000}
@@ -85,8 +85,8 @@ export class MyNavbar extends Component {
               {/* <Nav.Link className="nav-link__item" eventKey={4} href=""> */}
               <Link
                 className="nav-link__item nav-link pointer"
-                // activeClass="active"
-                // spy={true}
+                activeClass="active"
+                spy={true}
                 to="contact"
                 smooth={true}
                 duration={1000}

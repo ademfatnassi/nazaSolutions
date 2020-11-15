@@ -1,22 +1,21 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-// import Slider from "react-slick";
-// import { Telephone } from "react-bootstrap-icons";
-
-import { sendMail } from "../../services";
-import { ToastContainer, toast } from "react-toastify";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from "swiper";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-import "swiper/swiper-bundle.css";
-import "react-toastify/dist/ReactToastify.css";
-import "./Contact.css";
-
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FaFacebookF, FaLinkedinIn, FaPhoneSquareAlt } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { MdMessage } from "react-icons/md";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import SwiperCore, { Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+import "swiper/swiper-bundle.css";
 import coca_cola from "../../assets/images/coca-cola.svg";
+// import Slider from "react-slick";
+// import { Telephone } from "react-bootstrap-icons";
+import { sendMail } from "../../services";
+import "./Contact.css";
+
 
 SwiperCore.use([Autoplay]);
 const emailRegex = RegExp(
@@ -252,7 +251,7 @@ export class Contact extends Component {
                 <Col
                   lg
                   className="  bg-light rounded contactForm"
-                  // style={{ marginTop: "-5em" }}
+                // style={{ marginTop: "-5em" }}
                 >
                   <Form className="p-5 " onSubmit={this.handleSubmit}>
                     <h3>NAZA Dev Solutions contact form</h3>
@@ -302,8 +301,8 @@ export class Contact extends Component {
                       // disabled={!formValid(this.state)}
                       className="right-0"
                       style={{
-                        backgroundColor: "#5DBFDF",
-                        borderColor: "#5DBFDF",
+                        backgroundColor: "#07242C",
+                        borderColor: "#07242C",
                       }}
                       type="submit"
                     >
@@ -327,8 +326,12 @@ export class Contact extends Component {
                 </h5>
               </Col>
               <Col className="text-right p-2">
-                <FaFacebookF size="32" />
-                <FaLinkedinIn size="32" />
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                  <FaFacebookF size="32" />
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedinIn size="32" />
+                </a>
               </Col>
             </Row>
           </Container>
